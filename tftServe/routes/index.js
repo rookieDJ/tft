@@ -1,19 +1,15 @@
 const router = require('koa-router')()
-
+const spa = require('../lib/spa')
+const {getIp} = require('../lib/utils')
+let logger = require('../lib/log');
 router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
+  let request =ctx.request;
+  logger.info(`当前访问ip地址为${await getIp(request)}`);
+  
+  let data =await spa()
+  ctx.body =data
+  // await ctx.render('index',data )
 })
 
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
 
 module.exports = router
