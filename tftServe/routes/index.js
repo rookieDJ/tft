@@ -1,15 +1,32 @@
-const router = require('koa-router')()
-const spa = require('../lib/spa')
-const {getIp} = require('../lib/utils')
-let logger = require('../lib/log');
-router.get('/', async (ctx, next) => {
-  let request =ctx.request;
-  logger.info(`当前访问ip地址为${await getIp(request)}`);
-  
-  let data =await spa()
-  ctx.body =data
-  // await ctx.render('index',data )
-})
+//引入并实例化
+const router = require('koa-router')();
+const fs = require('fs');
+const path = require('path');
+//封装递归
+function loadRoutes(filePath) {
+  //将当前目录下 都读出来
+  const files = fs.readdirSync(filePath);
+  files.filter(file => { // 过滤
+      if (filePath !== __dirname && file === 'index.js') {
+        //读取的时候会将当前目录的 index.js 也读取出来，这个不需要，如果拿到别的地方可以不加这个判断
+        console.log("routes module must not be 'index.js' ")
+      }
+      return file !== 'index.js'
+    }) // 将 index.js 过滤掉，路由名字一律不能用 index.js 命名，否则不生效，我这里边的 index.js 如果拿到外面就不用添加这个判断了 ...
+    .forEach(file => {
+      let newFilePath = path.join(filePath, file);
+      if (fs.statSync(newFilePath).isDirectory()) { // 是目录
+        loadRoutes(newFilePath);
+      } else { // 是文件
+        let route = require(newFilePath);
+        //注册路由
+        router.use(route.routes())
+        router.use(route.allowedMethods())
+      }
+    })
 
+}
+//启动
+loadRoutes(__dirname);
 
-module.exports = router
+module.exports = router;
