@@ -1,0 +1,45 @@
+module.exports = [{
+  val: 'br',
+  cnName: '巴西',
+  enName: 'BR'
+}, {
+  val: 'eune',
+  cnName: '北欧东欧',
+  enName: 'EUNE'
+}, {
+  val: 'euw',
+  cnName: '西欧',
+  enName: 'EUW'
+}, {
+  val: 'jp',
+  cnName: '日',
+  enName: 'JP'
+}, {
+  val: 'kr',
+  cnName: '韩',
+  enName: 'KR'
+}, {
+  val: 'lan',
+  cnName: '拉美北',
+  enName: 'LAN'
+}, {
+  val: 'las',
+  cnName: '拉美北',
+  enName: 'LAS'
+}, {
+  val: 'na',
+  cnName: '北美',
+  enName: 'NA'
+}, {
+  val: 'oce',
+  cnName: '澳',
+  enName: 'OCE'
+}, {
+  val: 'tr',
+  cnName: '土耳其',
+  enName: 'TR'
+}, {
+  val: 'ru',
+  cnName: '俄',
+  enName: 'RU'
+}]

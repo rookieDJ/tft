@@ -23,7 +23,7 @@ module.exports = {
     // let rankIconUrlTest = rankIconUrl.replace(/^[^a-zA-Z]+/, '')
     rank.icon = rankIconUrl.replace(/^[^a-zA-Z]+/, '')
     // 段位级别
-    rank.level = $(".profile__tier__summary__tier.text-gold").text().trim()
+    rank.level = $(".profile__tier__summary__tier").text().trim()
     // 胜点
     rank.point = $(".profile__tier__summary__lp").text().replace(/[^\d]+/, '')
     // 名次

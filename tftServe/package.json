@@ -5,7 +5,7 @@
   "scripts": {
     "start": "set PORT=3001 && node bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
+    "prd": "pm2 start bin/www"  ,
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -28,7 +28,6 @@
     "koa-views": "^6.2.0",
     "log4js": "^6.3.0",
     "module-alias": "^2.2.2",
-    "puppeteer": "^5.4.1",
     "request": "^2.88.2"
   },
   "devDependencies": {

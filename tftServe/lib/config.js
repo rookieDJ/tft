@@ -1,5 +1,7 @@
 let config = {
-  url :'https://lolchess.gg/profile'
+  url: 'https://lolchess.gg/profile'
 }
 
-module.exports = {config}
+module.exports = {
+  config
+}

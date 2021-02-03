@@ -11,26 +11,30 @@ const {
   error
 } = require('@lib/res')
 let logger = require('@lib/log');
-// router.get('/', async (ctx, next) => {
-//   let request =ctx.request;
-//   logger.info(`当前访问ip地址为${await getIp(request)}`);
-
-//   let data =await spa()
-//   ctx.body =data
-//   // await ctx.render('index',data )
-// })
-router.get('/search/:name', async (ctx, next) => {
+router.prefix('/search')
+router.get('/', async (ctx, next) => {
   try {
+    // let {
+    //   name,
+    //   server
+    // } = ctx.params
     let {
-      name
-    } = ctx.params
+      name,
+      server
+    } = ctx.query;
     // let urlParams = encodeURIComponent('非物質えぐって')
-    const res = await get(`https://lolchess.gg/profile/jp/${encodeURIComponent(name)}`)
-    let body = JSON.parse(res).body
-    ctx.set("Content-Type", "application/json")
-    ctx.body = success(
-      pleyerInfo(body))
+    const body = await get(`https://lolchess.gg/profile/jp/${encodeURIComponent(name)}`)
+    // const body = await get(`https://lolchess.gg/profile/jp/%E7%81%BC%E7%9C%BC%E7%9A%84%E5%A4%8F%E4%BE%AF%E6%83%87`)
+    if (body) {
+      let request = ctx.request;
+      logger.info(`当前访问ip地址为${await getIp(request)}`);
+      ctx.set("Content-Type", "application/json")
+      ctx.body = success(pleyerInfo(body))
+    } else {
+      ctx.body = error(500, 'res为空')
+    }
   } catch (e) {
+    logger.info(`接口报错${e}`);
     ctx.body = error(999, e)
   }
 })
