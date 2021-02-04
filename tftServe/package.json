@@ -5,10 +5,11 @@
   "scripts": {
     "start": "set PORT=3001 && node bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www"  ,
+    "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.3",
     "debug": "^4.1.1",
@@ -34,10 +35,12 @@
     "nodemon": "^1.19.1"
   },
   "_moduleAliases": {
-    "@":".",
-    "@lib":"./lib",
-    "@cont":"./controller",
-    "@utils":"./lib/utils"
+    "@": ".",
+    "@lib": "./lib",
+    "@cont": "./controller",
+    "@utils": "./lib/utils"
   },
-  "_moduleDirectories": ["node_modules_custom"]
+  "_moduleDirectories": [
+    "node_modules_custom"
+  ]
 }

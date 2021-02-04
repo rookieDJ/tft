@@ -1,12 +1,16 @@
 const http = require('http');
 const request = require('request');
 const $ = require('cheerio');
-module.exports = url => {
+const axios = require('axios');
+module.exports = (url, data) => {
   console.log('cheerio', url);
   return new Promise((resolve, reject) => {
-    request(url, (error, response, body) => {
-      console.log(error);
-      resolve(body)
-    })
+    axios.get(url, data).then(res => {
+      resolve(res.data)
+    }).catch((error) => {
+      reject(error)
+    });
   })
+
+
 }
