@@ -38,9 +38,9 @@ Component({
     // 区服
     pageList: [],
     // 下标
-    searchIndex: 0,
+    searchIndex: 3,
     // 名字
-    gamer: '',
+    gamer: '灼眼的夏侯惇',
     // 玩家信息
     gamerInfo: {}
   },
@@ -67,7 +67,6 @@ Component({
         let {
           data
         } = await getSearch(subData)
-        console.log(res);
         this.setData({
           gamerInfo: data
         })

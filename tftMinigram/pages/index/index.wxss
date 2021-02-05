@@ -19,3 +19,17 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.homeContent{
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom:calc(100rpx + env(safe-area-inset-bottom) / 2);
+}
+
+.mainContent{
+  flex:1;
+}
+
+.footContent{
+  flex-shrink: 0;
+}

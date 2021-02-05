@@ -11,3 +11,9 @@
   </view>
   <button class="cu-btn round bg-blue" bindtap="searchInfo">搜索</button>
 </view>
+<view class="searchContent">
+  <view class="cu-avatar xl round" wx:if='{{gamerInfo.headerUrl}}' style="background-image:url('https://{{gamerInfo.headerUrl}}')"></view>
+  <view>ID：{{gamerInfo.name||'暂无玩家信息'}}</view>
+  <view>LV{{gamerInfo.level||'0'}}</view>
+  <view>所在服务器：{{gamerInfo.server||'暂无服务器信息'}}</view>
+</view>

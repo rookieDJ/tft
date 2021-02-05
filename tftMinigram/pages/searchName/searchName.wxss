@@ -2,3 +2,9 @@
 .searchNameNav{
   padding-right: 20rpx;
 }
+.searchContent{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  padding: 30rpx;
+}
