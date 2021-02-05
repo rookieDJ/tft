@@ -1,0 +1,13 @@
+<view class="cu-bar search bg-white searchNameNav">
+  <view class="action">
+    <picker bindchange="updateServeList" range-key="cnName" value="{{pageList[searchIndex].cnName}}" range="{{pageList}}">
+      <view class="picker">{{pageList[searchIndex].cnName||'巴西'}}服</view>
+    </picker>
+    <text class="cuIcon-triangledownfill"></text>
+  </view>
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="召唤师名字" confirm-type="search" value='{{gamer}}' bindinput="updateGamer" />
+  </view>
+  <button class="cu-btn round bg-blue" bindtap="searchInfo">搜索</button>
+</view>

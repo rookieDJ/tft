@@ -1,6 +1,10 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+// 获取全局函数
+const {
+  navChange
+} = app
 const {
   getBasic,
   getSearch
@@ -8,11 +12,12 @@ const {
 
 Page({
   data: {
-    serveIndex: 0,
+    // 底部导航
+    navList: app.globalData.navList,
+    navIndex: app.globalData.navIndex,
+    // 区服信息
     serveList: [],
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+
   },
   // 事件处理函数
   bindViewTap() {
@@ -20,9 +25,20 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad() {
+  init() {
     this.getBasic()
-
+  },
+  // tab修改方法
+  navChange(e) {
+    let index = e.currentTarget.dataset.cur
+    navChange(index)
+    this.setData({
+      navIndex: index
+    })
+  },
+  onLoad() {
+    console.log('app', app);
+    this.init();
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,
@@ -50,8 +66,8 @@ Page({
     //   })
     // }
   },
+  // 
   getUserInfo(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -71,6 +87,9 @@ Page({
       let res = await getSearch({
         name: '灼眼的夏侯惇',
         server: 'jp'
+      })
+      this.setData({
+        serveIndex: e.detail.value
       })
     } catch (error) {
       console.log(error);

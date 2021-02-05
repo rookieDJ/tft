@@ -1,23 +1,9 @@
-<!-- index.wxml -->
-<view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-      获取头像昵称
-    </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
-  <view>
-    <picker bindchange="bindPickerChange" range-key="{{'cnName'}}" value="{{serveIndex}}" range="{{serveList}}">
-      <view class="picker">区服：{{serveList[serveIndex].cnName}}服</view>
-    </picker>
-  </view>
-  <view>
-    <input placeholder="请输入ID" />
-  </view>
-  <view>
-    <button bindtap="serachInfo" type="primary">查询</button>
+<searchName serveList="{{serveList}}" wx:if="{{navIndex==0}}" />
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" wx:for="{{navList}}" wx:for-item="item" wx:for-index="index" wx:key="index" data-cur="{{index}}" bindtap="navChange">
+    <view class='cuIcon-cu-image'>
+      <image src="{{index==navIndex?item.actIcon:item.icon}}" />
+    </view>
+    <view class="{{index==navIndex?'text-green':'text-gray'}}">{{item.name}}</view>
   </view>
 </view>
