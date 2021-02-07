@@ -1,19 +1,95 @@
-<view class="cu-bar search bg-white searchNameNav">
-  <view class="action">
-    <picker bindchange="updateServeList" range-key="cnName" value="{{pageList[searchIndex].cnName}}" range="{{pageList}}">
-      <view class="picker">{{pageList[searchIndex].cnName||'巴西'}}服</view>
-    </picker>
-    <text class="cuIcon-triangledownfill"></text>
+<view class="searchBox">
+  <!-- 头部搜索 -->
+  <view class="cu-bar search bg-white searchNameNav">
+    <view class="action">
+      <picker bindchange="updateServeList" range-key="cnName" value="{{pageList[searchIndex].cnName}}" range="{{pageList}}">
+        <view class="picker">{{pageList[searchIndex].cnName||'巴西'}}服</view>
+      </picker>
+      <text class="cuIcon-triangledownfill"></text>
+    </view>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="召唤师名字" confirm-type="search" value='{{gamer}}' bindinput="updateGamer" />
+    </view>
+    <button class="cu-btn round bg-blue" bindtap="searchInfo">搜索</button>
   </view>
-  <view class="search-form round">
-    <text class="cuIcon-search"></text>
-    <input type="text" placeholder="召唤师名字" confirm-type="search" value='{{gamer}}' bindinput="updateGamer" />
+  <view class="searchBoxContent">
+    <!-- 基础信息 -->
+    <view class="searchContent">
+      <view class="searchLeft">
+        <view class="searchHeader">
+          <view class="cu-avatar xl round" wx:if='{{gamerInfo.headerUrl}}' style="background-image:url('https://{{gamerInfo.headerUrl}}')"></view>
+        </view>
+        <view class="basicInfo">
+          <view class="basicInfoName">{{gamerInfo.name||'暂无信息'}}</view>
+          <view class="basicInfoMore">
+            <view class="basicInfoMoreFont">LV{{gamerInfo.level||'0'}}</view>
+            <view class="basicInfoMoreFont">服务器：{{gamerInfo.server||'暂无信息'}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="searchRight">
+        <view class="rankImg">
+          <image src="https://{{gamerInfo.rank.icon}}"></image>
+        </view>
+        <view class="rankFont">{{gamerInfo.rank.level}}</view>
+      </view>
+    </view>
+    <!-- 排名信息 -->
+    <view class="rankInfo">
+      <view class="rankInfoBox">
+        <view class="rankInfoNum" style="color: var(--green)">90</view>
+        <view>第一名</view>
+      </view>
+      <view class="rankInfoBox">
+        <view class="rankInfoNum" style="color: var(--blue)">90</view>
+        <view>前四名</view>
+      </view>
+      <view class="rankInfoBox">
+        <view class="rankInfoNum" style="color: var(--purple)">90</view>
+        <view>平均排名</view>
+      </view>
+      <view class="rankInfoBox">
+        <view class="rankInfoNum">90</view>
+        <view>总场数</view>
+      </view>
+    </view>
+    <!-- 比赛记录 -->
+    <scroll-view class="rankRecordList">
+      <view class="rankRecord" wx:for="{{20}}">
+        <!-- 名次图标 rankRankingGreen rankRankingBlue rankRankingGrey -->
+        <view class="rankRanking rankRankingGreen">1</view>
+        <!-- 比赛列表 -->
+        <view class="rankRecordDetail">
+          <!-- 羁绊图标组 -->
+          <view class="fettersIconList">
+            <view class="fettersIconBasic tft-hexagon-image tft-hexagon-image--black tft-hexagon-image--24 tft-hexagon-image--gold" wx:for="{{6}}">
+              <image src="//cdn.lolchess.gg/images/assets/tft/traits/4.0/trait_icon_theboss_black.png" />
+            </view>
+          </view>
+          <!-- 英雄头像组 -->
+          <view class="hexoIconList">
+            <view class="hexoIconBasic tft-champion cost-1" wx:for="{{9}}">
+              <image src="//cdn.lolchess.gg/images/tft/champions/set4.5/Garen.png" alt="Garen" data-toggle="tooltip" title="" data-original-title="Garen" />
+            </view>
+          </view>
+        </view>
+        <!-- 右侧 -->
+        <view class="matchTime">
+          <view>排位赛</view>
+          <view>30:34</view>
+          <view>5h ago</view>
+        </view>
+        <view class="searchAllIcon ">
+          <view class="cuIcon-unfold"></view>
+        </view>
+      </view>
+    </scroll-view>
   </view>
-  <button class="cu-btn round bg-blue" bindtap="searchInfo">搜索</button>
+  <view class="cu-tabbar-height" />
 </view>
-<view class="searchContent">
-  <view class="cu-avatar xl round" wx:if='{{gamerInfo.headerUrl}}' style="background-image:url('https://{{gamerInfo.headerUrl}}')"></view>
-  <view>ID：{{gamerInfo.name||'暂无玩家信息'}}</view>
-  <view>LV{{gamerInfo.level||'0'}}</view>
-  <view>所在服务器：{{gamerInfo.server||'暂无服务器信息'}}</view>
+<view class='cu-load load-modal loadingIcon' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='https://cdn.lolchess.gg/images/tft/item/HandofJustice.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
 </view>

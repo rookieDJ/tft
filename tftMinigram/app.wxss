@@ -1,6 +1,7 @@
 /**app.wxss**/
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
+@import "utils/app.wxss";
 .scrollPage {
   height: 100vh;
 }
@@ -107,3 +108,6 @@
 }
 
 
+.loadingIcon>image{
+  border-radius: 50%;
+}

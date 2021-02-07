@@ -1,0 +1,410 @@
+.tft-hexagon{display:inline-block;text-align:left;vertical-align:middle;position:relative;width:20rpx;height:11.55rpx;background-color:#383838;margin:5.77rpx 0}
+.tft-hexagon:after,.tft-hexagon:before{content:"";position:absolute;width:0;border-left:10rpx solid transparent;border-right:10rpx solid transparent}
+.tft-hexagon:before{bottom:100%;border-bottom:5.77rpx solid #383838}
+.tft-hexagon:after{top:100%;width:0;border-top:5.77rpx solid #383838}
+.tft-hexagon img{position:absolute;top:-1rpx;left:3rpx;width:14rpx;-webkit-filter:brightness(0) invert(1);filter:brightness(0) invert(1)}
+.tft-hexagon--noinvert img{-webkit-filter:none;filter:none}
+.tft-hexagon .stack{top:-16rpx;left:4rpx;color:#fff;z-index:0}
+.tft-hexagon .stack,.tft-hexagon .stack-tag{display:inline-block;position:absolute;font-size:11rpx;text-align:center;padding:1rpx 3rpx;line-height:1}
+.tft-hexagon .stack-tag{top:12rpx;left:12rpx;color:#666;z-index:10}
+.tft-hexagon--grade-1{background-color:#ca9372}
+.tft-hexagon--grade-1:before{border-bottom-color:#ca9372}
+.tft-hexagon--grade-1:after{border-top-color:#ca9372}
+.tft-hexagon--grade-1 .stack{background-color:#ca9372}
+.tft-hexagon--grade-2{background-color:#92b1bd}
+.tft-hexagon--grade-2:before{border-bottom-color:#92b1bd}
+.tft-hexagon--grade-2:after{border-top-color:#92b1bd}
+.tft-hexagon--grade-2 .stack{background-color:#92b1bd}
+.tft-hexagon--grade-3{background-color:#ffb93b}
+.tft-hexagon--grade-3:before{border-bottom-color:#ffb93b}
+.tft-hexagon--grade-3:after{border-top-color:#ffb93b}
+.tft-hexagon--grade-3 .stack{background-color:#ffb93b}
+.tft-hexagon--grade-bronze{background-color:#ca9372}
+.tft-hexagon--grade-bronze:before{border-bottom-color:#ca9372}
+.tft-hexagon--grade-bronze:after{border-top-color:#ca9372}
+.tft-hexagon--grade-bronze .stack{background-color:#ca9372}
+.tft-hexagon--grade-silver{background-color:#92b1bd}
+.tft-hexagon--grade-silver:before{border-bottom-color:#92b1bd}
+.tft-hexagon--grade-silver:after{border-top-color:#92b1bd}
+.tft-hexagon--grade-silver .stack{background-color:#92b1bd}
+.tft-hexagon--grade-gold{background-color:#ffb93b}
+.tft-hexagon--grade-gold:before{border-bottom-color:#ffb93b}
+.tft-hexagon--grade-gold:after{border-top-color:#ffb93b}
+.tft-hexagon--grade-gold .stack{background-color:#ffb93b}
+.tft-hexagon--grade-chromatic{background-color:#f5f5f5}
+.tft-hexagon--grade-chromatic:before{border-bottom-color:#f5f5f5}
+.tft-hexagon--grade-chromatic:after{border-top-color:#f5f5f5}
+.tft-hexagon--grade-chromatic .stack{background-color:#f5f5f5}
+.tft-hexagon--glacial{background-color:#383838}
+.tft-hexagon--glacial:before{border-bottom-color:#383838}
+.tft-hexagon--glacial:after{border-top-color:#383838}
+.tft-hexagon--glacial .stack,.tft-hexagon--wild{background-color:#383838}
+.tft-hexagon--wild:before{border-bottom-color:#383838}
+.tft-hexagon--wild:after{border-top-color:#383838}
+.tft-hexagon--dragon,.tft-hexagon--wild .stack{background-color:#383838}
+.tft-hexagon--dragon:before{border-bottom-color:#383838}
+.tft-hexagon--dragon:after{border-top-color:#383838}
+.tft-hexagon--dragon .stack,.tft-hexagon--imperial{background-color:#383838}
+.tft-hexagon--imperial:before{border-bottom-color:#383838}
+.tft-hexagon--imperial:after{border-top-color:#383838}
+.tft-hexagon--imperial .stack,.tft-hexagon--pirate{background-color:#383838}
+.tft-hexagon--pirate:before{border-bottom-color:#383838}
+.tft-hexagon--pirate:after{border-top-color:#383838}
+.tft-hexagon--noble,.tft-hexagon--pirate .stack{background-color:#383838}
+.tft-hexagon--noble:before{border-bottom-color:#383838}
+.tft-hexagon--noble:after{border-top-color:#383838}
+.tft-hexagon--noble .stack,.tft-hexagon--robot{background-color:#383838}
+.tft-hexagon--robot:before{border-bottom-color:#383838}
+.tft-hexagon--robot:after{border-top-color:#383838}
+.tft-hexagon--demon,.tft-hexagon--robot .stack{background-color:#383838}
+.tft-hexagon--demon:before{border-bottom-color:#383838}
+.tft-hexagon--demon:after{border-top-color:#383838}
+.tft-hexagon--demon .stack,.tft-hexagon--yordle{background-color:#383838}
+.tft-hexagon--yordle:before{border-bottom-color:#383838}
+.tft-hexagon--yordle:after{border-top-color:#383838}
+.tft-hexagon--phantom,.tft-hexagon--yordle .stack{background-color:#383838}
+.tft-hexagon--phantom:before{border-bottom-color:#383838}
+.tft-hexagon--phantom:after{border-top-color:#383838}
+.tft-hexagon--blademaster,.tft-hexagon--phantom .stack{background-color:#383838}
+.tft-hexagon--blademaster:before{border-bottom-color:#383838}
+.tft-hexagon--blademaster:after{border-top-color:#383838}
+.tft-hexagon--blademaster .stack,.tft-hexagon--sorcerer{background-color:#383838}
+.tft-hexagon--sorcerer:before{border-bottom-color:#383838}
+.tft-hexagon--sorcerer:after{border-top-color:#383838}
+.tft-hexagon--elementalist,.tft-hexagon--sorcerer .stack{background-color:#383838}
+.tft-hexagon--elementalist:before{border-bottom-color:#383838}
+.tft-hexagon--elementalist:after{border-top-color:#383838}
+.tft-hexagon--elementalist .stack,.tft-hexagon--gunslinger{background-color:#383838}
+.tft-hexagon--gunslinger:before{border-bottom-color:#383838}
+.tft-hexagon--gunslinger:after{border-top-color:#383838}
+.tft-hexagon--gunslinger .stack,.tft-hexagon--knight{background-color:#383838}
+.tft-hexagon--knight:before{border-bottom-color:#383838}
+.tft-hexagon--knight:after{border-top-color:#383838}
+.tft-hexagon--guardian,.tft-hexagon--knight .stack{background-color:#383838}
+.tft-hexagon--guardian:before{border-bottom-color:#383838}
+.tft-hexagon--guardian:after{border-top-color:#383838}
+.tft-hexagon--guardian .stack,.tft-hexagon--ranger{background-color:#383838}
+.tft-hexagon--ranger:before{border-bottom-color:#383838}
+.tft-hexagon--ranger:after{border-top-color:#383838}
+.tft-hexagon--ranger .stack,.tft-hexagon--shapeshifter{background-color:#383838}
+.tft-hexagon--shapeshifter:before{border-bottom-color:#383838}
+.tft-hexagon--shapeshifter:after{border-top-color:#383838}
+.tft-hexagon--hextech,.tft-hexagon--shapeshifter .stack{background-color:#383838}
+.tft-hexagon--hextech:before{border-bottom-color:#383838}
+.tft-hexagon--hextech:after{border-top-color:#383838}
+.tft-hexagon--hextech .stack,.tft-hexagon--light{background-color:#383838}
+.tft-hexagon--light:before{border-bottom-color:#383838}
+.tft-hexagon--light:after{border-top-color:#383838}
+.tft-hexagon--light .stack,.tft-hexagon--warden{background-color:#383838}
+.tft-hexagon--warden:before{border-bottom-color:#383838}
+.tft-hexagon--warden:after{border-top-color:#383838}
+.tft-hexagon--ocean,.tft-hexagon--warden .stack{background-color:#383838}
+.tft-hexagon--ocean:before{border-bottom-color:#383838}
+.tft-hexagon--ocean:after{border-top-color:#383838}
+.tft-hexagon--ocean .stack,.tft-hexagon--steel{background-color:#383838}
+.tft-hexagon--steel:before{border-bottom-color:#383838}
+.tft-hexagon--steel:after{border-top-color:#383838}
+.tft-hexagon--inferno,.tft-hexagon--steel .stack{background-color:#383838}
+.tft-hexagon--inferno:before{border-bottom-color:#383838}
+.tft-hexagon--inferno:after{border-top-color:#383838}
+.tft-hexagon--inferno .stack,.tft-hexagon--shadow{background-color:#383838}
+.tft-hexagon--shadow:before{border-bottom-color:#383838}
+.tft-hexagon--shadow:after{border-top-color:#383838}
+.tft-hexagon--shadow .stack,.tft-hexagon--wind{background-color:#383838}
+.tft-hexagon--wind:before{border-bottom-color:#383838}
+.tft-hexagon--wind:after{border-top-color:#383838}
+.tft-hexagon--crystal,.tft-hexagon--wind .stack{background-color:#383838}
+.tft-hexagon--crystal:before{border-bottom-color:#383838}
+.tft-hexagon--crystal:after{border-top-color:#383838}
+.tft-hexagon--crystal .stack,.tft-hexagon--forest{background-color:#383838}
+.tft-hexagon--forest:before{border-bottom-color:#383838}
+.tft-hexagon--forest:after{border-top-color:#383838}
+.tft-hexagon--forest .stack,.tft-hexagon--mountain{background-color:#383838}
+.tft-hexagon--mountain:before{border-bottom-color:#383838}
+.tft-hexagon--mountain:after{border-top-color:#383838}
+.tft-hexagon--electric,.tft-hexagon--mountain .stack{background-color:#383838}
+.tft-hexagon--electric:before{border-bottom-color:#383838}
+.tft-hexagon--electric:after{border-top-color:#383838}
+.tft-hexagon--avatar,.tft-hexagon--electric .stack{background-color:#383838}
+.tft-hexagon--avatar:before{border-bottom-color:#383838}
+.tft-hexagon--avatar:after{border-top-color:#383838}
+.tft-hexagon--avatar .stack,.tft-hexagon--desert{background-color:#383838}
+.tft-hexagon--desert:before{border-bottom-color:#383838}
+.tft-hexagon--desert:after{border-top-color:#383838}
+.tft-hexagon--berserker,.tft-hexagon--desert .stack{background-color:#383838}
+.tft-hexagon--berserker:before{border-bottom-color:#383838}
+.tft-hexagon--berserker:after{border-top-color:#383838}
+.tft-hexagon--berserker .stack,.tft-hexagon--predator{background-color:#383838}
+.tft-hexagon--predator:before{border-bottom-color:#383838}
+.tft-hexagon--predator:after{border-top-color:#383838}
+.tft-hexagon--poison,.tft-hexagon--predator .stack{background-color:#383838}
+.tft-hexagon--poison:before{border-bottom-color:#383838}
+.tft-hexagon--poison:after{border-top-color:#383838}
+.tft-hexagon--alchemist,.tft-hexagon--poison .stack{background-color:#383838}
+.tft-hexagon--alchemist:before{border-bottom-color:#383838}
+.tft-hexagon--alchemist:after{border-top-color:#383838}
+.tft-hexagon--alchemist .stack,.tft-hexagon--druid{background-color:#383838}
+.tft-hexagon--druid:before{border-bottom-color:#383838}
+.tft-hexagon--druid:after{border-top-color:#383838}
+.tft-hexagon--druid .stack,.tft-hexagon--summoner{background-color:#383838}
+.tft-hexagon--summoner:before{border-bottom-color:#383838}
+.tft-hexagon--summoner:after{border-top-color:#383838}
+.tft-hexagon--lunar,.tft-hexagon--summoner .stack{background-color:#383838}
+.tft-hexagon--lunar:before{border-bottom-color:#383838}
+.tft-hexagon--lunar:after{border-top-color:#383838}
+.tft-hexagon--cybernetic,.tft-hexagon--lunar .stack{background-color:#383838}
+.tft-hexagon--cybernetic:before{border-bottom-color:#383838}
+.tft-hexagon--cybernetic:after{border-top-color:#383838}
+.tft-hexagon--cybernetic .stack,.tft-hexagon--manareaver{background-color:#383838}
+.tft-hexagon--manareaver:before{border-bottom-color:#383838}
+.tft-hexagon--manareaver:after{border-top-color:#383838}
+.tft-hexagon--manareaver .stack,.tft-hexagon--starguardian{background-color:#383838}
+.tft-hexagon--starguardian:before{border-bottom-color:#383838}
+.tft-hexagon--starguardian:after{border-top-color:#383838}
+.tft-hexagon--protector,.tft-hexagon--starguardian .stack{background-color:#383838}
+.tft-hexagon--protector:before{border-bottom-color:#383838}
+.tft-hexagon--protector:after{border-top-color:#383838}
+.tft-hexagon--mechpilot,.tft-hexagon--protector .stack{background-color:#383838}
+.tft-hexagon--mechpilot:before{border-bottom-color:#383838}
+.tft-hexagon--mechpilot:after{border-top-color:#383838}
+.tft-hexagon--demolitionist,.tft-hexagon--mechpilot .stack{background-color:#383838}
+.tft-hexagon--demolitionist:before{border-bottom-color:#383838}
+.tft-hexagon--demolitionist:after{border-top-color:#383838}
+.tft-hexagon--chrono,.tft-hexagon--demolitionist .stack{background-color:#383838}
+.tft-hexagon--chrono:before{border-bottom-color:#383838}
+.tft-hexagon--chrono:after{border-top-color:#383838}
+.tft-hexagon--celestial,.tft-hexagon--chrono .stack{background-color:#383838}
+.tft-hexagon--celestial:before{border-bottom-color:#383838}
+.tft-hexagon--celestial:after{border-top-color:#383838}
+.tft-hexagon--celestial .stack,.tft-hexagon--rebel{background-color:#383838}
+.tft-hexagon--rebel:before{border-bottom-color:#383838}
+.tft-hexagon--rebel:after{border-top-color:#383838}
+.tft-hexagon--rebel .stack,.tft-hexagon--valkyrie{background-color:#383838}
+.tft-hexagon--valkyrie:before{border-bottom-color:#383838}
+.tft-hexagon--valkyrie:after{border-top-color:#383838}
+.tft-hexagon--infiltrator,.tft-hexagon--valkyrie .stack{background-color:#383838}
+.tft-hexagon--infiltrator:before{border-bottom-color:#383838}
+.tft-hexagon--infiltrator:after{border-top-color:#383838}
+.tft-hexagon--infiltrator .stack,.tft-hexagon--sniper{background-color:#383838}
+.tft-hexagon--sniper:before{border-bottom-color:#383838}
+.tft-hexagon--sniper:after{border-top-color:#383838}
+.tft-hexagon--sniper .stack,.tft-hexagon--starship{background-color:#383838}
+.tft-hexagon--starship:before{border-bottom-color:#383838}
+.tft-hexagon--starship:after{border-top-color:#383838}
+.tft-hexagon--starship .stack,.tft-hexagon--void{background-color:#383838}
+.tft-hexagon--void:before{border-bottom-color:#383838}
+.tft-hexagon--void:after{border-top-color:#383838}
+.tft-hexagon--spacepirate,.tft-hexagon--void .stack{background-color:#383838}
+.tft-hexagon--spacepirate:before{border-bottom-color:#383838}
+.tft-hexagon--spacepirate:after{border-top-color:#383838}
+.tft-hexagon--blaster,.tft-hexagon--spacepirate .stack{background-color:#383838}
+.tft-hexagon--blaster:before{border-bottom-color:#383838}
+.tft-hexagon--blaster:after{border-top-color:#383838}
+.tft-hexagon--blaster .stack,.tft-hexagon--mercenary{background-color:#383838}
+.tft-hexagon--mercenary:before{border-bottom-color:#383838}
+.tft-hexagon--mercenary:after{border-top-color:#383838}
+.tft-hexagon--darkstar,.tft-hexagon--mercenary .stack{background-color:#383838}
+.tft-hexagon--darkstar:before{border-bottom-color:#383838}
+.tft-hexagon--darkstar:after{border-top-color:#383838}
+.tft-hexagon--astro,.tft-hexagon--darkstar .stack{background-color:#383838}
+.tft-hexagon--astro:before{border-bottom-color:#383838}
+.tft-hexagon--astro:after{border-top-color:#383838}
+.tft-hexagon--astro .stack,.tft-hexagon--battlecast{background-color:#383838}
+.tft-hexagon--battlecast:before{border-bottom-color:#383838}
+.tft-hexagon--battlecast:after{border-top-color:#383838}
+.tft-hexagon--battlecast .stack,.tft-hexagon--paragon{background-color:#383838}
+.tft-hexagon--paragon:before{border-bottom-color:#383838}
+.tft-hexagon--paragon:after{border-top-color:#383838}
+.tft-hexagon--enlightened,.tft-hexagon--paragon .stack{background-color:#383838}
+.tft-hexagon--enlightened:before{border-bottom-color:#383838}
+.tft-hexagon--enlightened:after{border-top-color:#383838}
+.tft-hexagon--enlightened .stack,.tft-hexagon--tormented{background-color:#383838}
+.tft-hexagon--tormented:before{border-bottom-color:#383838}
+.tft-hexagon--tormented:after{border-top-color:#383838}
+.tft-hexagon--cultist,.tft-hexagon--tormented .stack{background-color:#383838}
+.tft-hexagon--cultist:before{border-bottom-color:#383838}
+.tft-hexagon--cultist:after{border-top-color:#383838}
+.tft-hexagon--cultist .stack,.tft-hexagon--elderwood{background-color:#383838}
+.tft-hexagon--elderwood:before{border-bottom-color:#383838}
+.tft-hexagon--elderwood:after{border-top-color:#383838}
+.tft-hexagon--elderwood .stack,.tft-hexagon--ninja{background-color:#383838}
+.tft-hexagon--ninja:before{border-bottom-color:#383838}
+.tft-hexagon--ninja:after{border-top-color:#383838}
+.tft-hexagon--moonlight,.tft-hexagon--ninja .stack{background-color:#383838}
+.tft-hexagon--moonlight:before{border-bottom-color:#383838}
+.tft-hexagon--moonlight:after{border-top-color:#383838}
+.tft-hexagon--moonlight .stack,.tft-hexagon--warlord{background-color:#383838}
+.tft-hexagon--warlord:before{border-bottom-color:#383838}
+.tft-hexagon--warlord:after{border-top-color:#383838}
+.tft-hexagon--theboss,.tft-hexagon--warlord .stack{background-color:#383838}
+.tft-hexagon--theboss:before{border-bottom-color:#383838}
+.tft-hexagon--theboss:after{border-top-color:#383838}
+.tft-hexagon--divine,.tft-hexagon--theboss .stack{background-color:#383838}
+.tft-hexagon--divine:before{border-bottom-color:#383838}
+.tft-hexagon--divine:after{border-top-color:#383838}
+.tft-hexagon--divine .stack,.tft-hexagon--spirit{background-color:#383838}
+.tft-hexagon--spirit:before{border-bottom-color:#383838}
+.tft-hexagon--spirit:after{border-top-color:#383838}
+.tft-hexagon--exile,.tft-hexagon--spirit .stack{background-color:#383838}
+.tft-hexagon--exile:before{border-bottom-color:#383838}
+.tft-hexagon--exile:after{border-top-color:#383838}
+.tft-hexagon--exile .stack,.tft-hexagon--fortune{background-color:#383838}
+.tft-hexagon--fortune:before{border-bottom-color:#383838}
+.tft-hexagon--fortune:after{border-top-color:#383838}
+.tft-hexagon--dusk,.tft-hexagon--fortune .stack{background-color:#383838}
+.tft-hexagon--dusk:before{border-bottom-color:#383838}
+.tft-hexagon--dusk:after{border-top-color:#383838}
+.tft-hexagon--duelist,.tft-hexagon--dusk .stack{background-color:#383838}
+.tft-hexagon--duelist:before{border-bottom-color:#383838}
+.tft-hexagon--duelist:after{border-top-color:#383838}
+.tft-hexagon--duelist .stack,.tft-hexagon--keeper{background-color:#383838}
+.tft-hexagon--keeper:before{border-bottom-color:#383838}
+.tft-hexagon--keeper:after{border-top-color:#383838}
+.tft-hexagon--keeper .stack,.tft-hexagon--shade{background-color:#383838}
+.tft-hexagon--shade:before{border-bottom-color:#383838}
+.tft-hexagon--shade:after{border-top-color:#383838}
+.tft-hexagon--shade .stack,.tft-hexagon--sharpshooter{background-color:#383838}
+.tft-hexagon--sharpshooter:before{border-bottom-color:#383838}
+.tft-hexagon--sharpshooter:after{border-top-color:#383838}
+.tft-hexagon--hunter,.tft-hexagon--sharpshooter .stack{background-color:#383838}
+.tft-hexagon--hunter:before{border-bottom-color:#383838}
+.tft-hexagon--hunter:after{border-top-color:#383838}
+.tft-hexagon--hunter .stack,.tft-hexagon--vanguard{background-color:#383838}
+.tft-hexagon--vanguard:before{border-bottom-color:#383838}
+.tft-hexagon--vanguard:after{border-top-color:#383838}
+.tft-hexagon--adept,.tft-hexagon--vanguard .stack{background-color:#383838}
+.tft-hexagon--adept:before{border-bottom-color:#383838}
+.tft-hexagon--adept:after{border-top-color:#383838}
+.tft-hexagon--adept .stack,.tft-hexagon--mystic{background-color:#383838}
+.tft-hexagon--mystic:before{border-bottom-color:#383838}
+.tft-hexagon--mystic:after{border-top-color:#383838}
+.tft-hexagon--brawler,.tft-hexagon--mystic .stack{background-color:#383838}
+.tft-hexagon--brawler:before{border-bottom-color:#383838}
+.tft-hexagon--brawler:after{border-top-color:#383838}
+.tft-hexagon--assassin,.tft-hexagon--brawler .stack{background-color:#383838}
+.tft-hexagon--assassin:before{border-bottom-color:#383838}
+.tft-hexagon--assassin:after{border-top-color:#383838}
+.tft-hexagon--assassin .stack,.tft-hexagon--mage{background-color:#383838}
+.tft-hexagon--mage:before{border-bottom-color:#383838}
+.tft-hexagon--mage:after{border-top-color:#383838}
+.tft-hexagon--dazzler,.tft-hexagon--mage .stack{background-color:#383838}
+.tft-hexagon--dazzler:before{border-bottom-color:#383838}
+.tft-hexagon--dazzler:after{border-top-color:#383838}
+.tft-hexagon--dazzler .stack,.tft-hexagon--emperor{background-color:#383838}
+.tft-hexagon--emperor:before{border-bottom-color:#383838}
+.tft-hexagon--emperor:after{border-top-color:#383838}
+.tft-hexagon--emperor .stack,.tft-hexagon--slayer{background-color:#383838}
+.tft-hexagon--slayer:before{border-bottom-color:#383838}
+.tft-hexagon--slayer:after{border-top-color:#383838}
+.tft-hexagon--blacksmith,.tft-hexagon--slayer .stack{background-color:#383838}
+.tft-hexagon--blacksmith:before{border-bottom-color:#383838}
+.tft-hexagon--blacksmith:after{border-top-color:#383838}
+.tft-hexagon--blacksmith .stack,.tft-hexagon--daredevil{background-color:#383838}
+.tft-hexagon--daredevil:before{border-bottom-color:#383838}
+.tft-hexagon--daredevil:after{border-top-color:#383838}
+.tft-hexagon--daredevil .stack,.tft-hexagon--dragonsoul{background-color:#383838}
+.tft-hexagon--dragonsoul:before{border-bottom-color:#383838}
+.tft-hexagon--dragonsoul:after{border-top-color:#383838}
+.tft-hexagon--dragonsoul .stack,.tft-hexagon--executioner{background-color:#383838}
+.tft-hexagon--executioner:before{border-bottom-color:#383838}
+.tft-hexagon--executioner:after{border-top-color:#383838}
+.tft-hexagon--executioner .stack,.tft-hexagon--fabled{background-color:#383838}
+.tft-hexagon--fabled:before{border-bottom-color:#383838}
+.tft-hexagon--fabled:after{border-top-color:#383838}
+.tft-hexagon--fabled .stack,.tft-hexagon--syphoner{background-color:#383838}
+.tft-hexagon--syphoner:before{border-bottom-color:#383838}
+.tft-hexagon--syphoner:after{border-top-color:#383838}
+.tft-hexagon--syphoner .stack{background-color:#383838}
+.tft-hexagon--grade-4{background:url(https://cdn.lolchess.gg/images/tft/bg-grade4.png) no-repeat;background-size:30rpx;background-position-x:-1rpx;background-position-y:0;height:30rpx!important;width:30rpx!important;margin:-2rpx -4rpx -3rpx -2rpx!important}
+.tft-hexagon--grade-4:after,.tft-hexagon--grade-4:before{border:0}
+.tft-hexagon--grade-4 img{top:6rpx!important;left:5rpx!important}
+.tft-hexagon--10{width:10rpx;height:5.77rpx;margin:2.89rpx 0}
+.tft-hexagon--10:after,.tft-hexagon--10:before{border-left-width:5rpx;border-right-width:5rpx}
+.tft-hexagon--10:before{border-bottom-width:2.89rpx}
+.tft-hexagon--10:after{border-top-width:2.89rpx}
+.tft-hexagon--10 img{top:-1rpx;left:.5rpx;width:9rpx}
+.tft-hexagon--24{width:24rpx;height:13.86rpx;margin:6.93rpx 0}
+.tft-hexagon--24:after,.tft-hexagon--24:before{border-left-width:12rpx;border-right-width:12rpx}
+.tft-hexagon--24:before{border-bottom-width:6.93rpx}
+.tft-hexagon--24:after{border-top-width:6.93rpx}
+.tft-hexagon--24 img{top:-2rpx;left:3rpx;width:18rpx}
+.tft-hexagon-chosen{background-color:#b04dff}
+.tft-hexagon-chosen:before{border-bottom-color:#b04dff}
+.tft-hexagon-chosen:after{border-top-color:#b04dff}
+.tft-hexagon-image{display:inline-flex;align-items:center;vertical-align:middle;justify-content:center;width:28rpx;height:28rpx;background-position:50%;background-repeat:no-repeat;background-size:cover}
+.tft-hexagon-image>img{width:16rpx;height:16rpx}
+.tft-hexagon-image--default{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/darken.svg)}
+.tft-hexagon-image--default-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/darken_chosen.svg)}
+.tft-hexagon-image--black{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/black.svg)}
+.tft-hexagon-image--darken{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/darken.svg)}
+.tft-hexagon-image--darken-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/darken_chosen.svg)}
+.tft-hexagon-image--bronze{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/bronze.svg)}
+.tft-hexagon-image--bronze-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/bronze_chosen.svg)}
+.tft-hexagon-image--silver{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/silver.svg)}
+.tft-hexagon-image--silver-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/silver_chosen.svg)}
+.tft-hexagon-image--gold{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/gold.svg)}
+.tft-hexagon-image--gold-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/gold_chosen.svg)}
+.tft-hexagon-image--chromatic{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/chromatic.svg)}
+.tft-hexagon-image--chromatic-chosen{background-image:url(https://cdn.lolchess.gg/images/tft/traits/background/chromatic_chosen.svg)}
+.tft-hexagon-image--12{width:12rpx;height:12rpx}
+.tft-hexagon-image--12>img{width:9rpx;height:9rpx}
+.tft-hexagon-image--20{width:20rpx;height:20rpx}
+.tft-hexagon-image--20>img{width:12rpx;height:12rpx}
+.tft-hexagon-image--24{width:24rpx;height:24rpx}
+.tft-hexagon-image--24>img{width:14rpx;height:14rpx}
+.tft-hexagon-image--32{width:32rpx;height:32rpx}
+.cost-1{border-color:grey}
+.tft-champion,.tft-champion-box{position:relative;display:inline-block}
+.tft-champion{width:40rpx;height:40rpx;border:2rpx solid #111;overflow:hidden;text-align:center;margin-left:4rpx;vertical-align:middle;border-radius:6rpx}
+.tft-champion.pbe:after{position:absolute;content:"";top:0;left:0;width:28rpx;height:28rpx;max-width:70%;max-height:70%;background-image:url(/images/tft/label_pbe_red.png);background-repeat:no-repeat;background-size:cover;pointer-events:none}
+.tft-champion img{max-width:none!important;width:120%!important;height:120%!important;margin-top:-6rpx!important;margin-left:-6rpx!important}
+.tft-champion .cost{width:18rpx;height:12rpx;line-height:12rpx;text-align:center;z-index:1;right:0;top:0}
+.tft-champion .cost,.tft-champion .name{position:absolute;display:inline-block;color:#fff;font-size:11rpx;font-family:"\B9D1\C740   \ACE0\B515",Malgun Gothic,Apple SD Gothic Neo,Helvetica,"Sans-serif";text-shadow:-1rpx 0 2rpx #000,0 1rpx 2rpx #000,1rpx 0 2rpx #000,0 -1rpx 2rpx #000;pointer-events:none}
+.tft-champion .name{width:100%;left:0;top:22rpx}
+.tft-champion.cost-1{border-color:grey}
+.tft-champion.cost-1 .cost{background-color:grey}
+.tft-champion.cost-1.active{border-color:grey}
+.tft-champion.cost-1.active .cost{background-color:grey}
+.tft-champion.cost-2{border-color:#11b288}
+.tft-champion.cost-2 .cost{background-color:#11b288}
+.tft-champion.cost-2.active{border-color:#11b288}
+.tft-champion.cost-2.active .cost{background-color:#11b288}
+.tft-champion.cost-3{border-color:#207ac7}
+.tft-champion.cost-3 .cost{background-color:#207ac7}
+.tft-champion.cost-3.active{border-color:#207ac7}
+.tft-champion.cost-3.active .cost{background-color:#207ac7}
+.tft-champion.cost-4{border-color:#c440da}
+.tft-champion.cost-4 .cost{background-color:#c440da}
+.tft-champion.cost-4.active{border-color:#c440da}
+.tft-champion.cost-4.active .cost{background-color:#c440da}
+.tft-champion.cost-5{border-color:#ffb93b}
+.tft-champion.cost-5 .cost{background-color:#ffb93b}
+.tft-champion.cost-5.active{border-color:#ffb93b}
+.tft-champion.cost-5.active .cost{background-color:#ffb93b}
+.tft-champion.cost-7{border:4rpx solid transparent;-o-border-image:linear-gradient(to bottom right,#b827fc 0,#2c90fc 25%,#b8fd33 50%,#fec837 75%,#fd1892);border-image:linear-gradient(to bottom right,#b827fc 0,#2c90fc 25%,#b8fd33 50%,#fec837 75%,#fd1892);border-image-slice:1}
+.tft-champion.cost-7 .cost{background-color:#ffb93b}
+.tft-champion.cost-7.active{border-color:#ffb93b}
+.tft-champion.cost-7.active .cost{background-color:#ffb93b}
+.tft-champion--80{width:80rpx;height:80rpx}
+.tft-champion--80 .name{top:60rpx}
+.tft-champion--64{width:64rpx;height:64rpx}
+.tft-champion--64 .name{top:44rpx}
+.tft-champion--44{width:44rpx;height:44rpx}
+.tft-champion--44 .name{top:26rpx}
+.tft-champion--36{width:36rpx;height:36rpx}
+.tft-champion--36 img{margin-top:-4rpx!important;margin-left:-4rpx!important}
+.tft-champion--36 .name{display:none}
+.tft-champion--32{width:32rpx;height:32rpx}
+.tft-champion--32 img{margin-top:-4rpx!important;margin-left:-4rpx!important}
+.tft-champion--32 .name{display:none}
+.tft-champion--24{width:24rpx;height:24rpx}
+.tft-champion--24 img{margin-top:-2rpx!important;margin-left:-2rpx!important}
+.tft-champion--24 .name{display:none}
+.tft-champion--off.cost-1{border-color:hsla(0,0%,50.2%,.5)}
+.tft-champion--off.cost-2{border-color:rgba(17,178,136,.5)}
+.tft-champion--off.cost-3{border-color:rgba(32,122,199,.5)}
+.tft-champion--off.cost-4{border-color:rgba(196,64,218,.5)}
+.tft-champion--off.cost-5,.tft-champion--off.cost-7{border-color:rgba(255,185,59,.5)}
+.tft-champion--off .cost,.tft-champion--off img{opacity:.2}
+.tft-champion--off:hover .cost,.tft-champion--off:hover img{opacity:.7}
+.tft-champion--no-zoom img{width:100%!important;height:100%!important;margin-left:0!important;margin-top:0!important}

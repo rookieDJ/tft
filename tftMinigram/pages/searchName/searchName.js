@@ -1,3 +1,5 @@
+// 获取应用实例
+const app = getApp()
 const {
   getSearch
 } = require('../../service/index.js')
@@ -6,6 +8,7 @@ Component({
 
   // 生命周期函数
   attached() {
+    this.loadModal()
     this.init();
   },
   /**
@@ -28,6 +31,13 @@ Component({
       this.setData({
         pageList: data
       })
+      if (data.length > 0) {
+        this.setData({
+          loadModal: false
+        })
+        this.searchInfo()
+      }
+
     }
   },
 
@@ -35,6 +45,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    loadModal: false,
     // 区服
     pageList: [],
     // 下标
@@ -49,8 +60,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+
     // 初始化
-    init() {},
+    init() {
+
+    },
     // 修改区服
     updateServeList(e) {
       this.setData({
@@ -59,6 +73,9 @@ Component({
     },
     // 查询详情
     async searchInfo() {
+      this.setData({
+        loadModal: true
+      })
       try {
         let subData = {
           name: this.data.gamer,
@@ -68,7 +85,8 @@ Component({
           data
         } = await getSearch(subData)
         this.setData({
-          gamerInfo: data
+          gamerInfo: data,
+          loadModal: false
         })
       } catch (error) {
         console.error(error);
@@ -77,6 +95,12 @@ Component({
     // 修改名字
     updateGamer(e) {
       this.data.gamer = e.detail.value;
+    },
+    // 全局加载方法
+    loadModal() {
+      this.setData({
+        loadModal: true
+      })
     }
   },
 
