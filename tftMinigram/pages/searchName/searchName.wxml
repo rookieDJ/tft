@@ -38,47 +38,53 @@
     <!-- 排名信息 -->
     <view class="rankInfo">
       <view class="rankInfoBox">
-        <view class="rankInfoNum" style="color: var(--green)">90</view>
+        <view class="rankInfoNum" style="color: var(--green)">{{gamerInfo.wins||'0'}}</view>
         <view>第一名</view>
       </view>
       <view class="rankInfoBox">
-        <view class="rankInfoNum" style="color: var(--blue)">90</view>
+        <view class="rankInfoNum" style="color: var(--blue)">{{gamerInfo.tops||'0'}}</view>
         <view>前四名</view>
       </view>
       <view class="rankInfoBox">
-        <view class="rankInfoNum" style="color: var(--purple)">90</view>
+        <view class="rankInfoNum" style="color: var(--purple)">{{gamerInfo.avgRank||'0'}}</view>
         <view>平均排名</view>
       </view>
       <view class="rankInfoBox">
-        <view class="rankInfoNum">90</view>
+        <view class="rankInfoNum" style="color: var(--yellow)">{{gamerInfo.rank.point||'0'}}</view>
+        <view>胜点</view>
+      </view>
+      <view class="rankInfoBox">
+        <view class="rankInfoNum">{{gamerInfo.played||'0'}}</view>
         <view>总场数</view>
       </view>
     </view>
     <!-- 比赛记录 -->
     <scroll-view class="rankRecordList">
-      <view class="rankRecord" wx:for="{{20}}">
+      <view class="rankRecord" wx:for="{{gamerInfo.matches.list}}" wx:for-index="index" wx:for-item="item">
         <!-- 名次图标 rankRankingGreen rankRankingBlue rankRankingGrey -->
-        <view class="rankRanking rankRankingGreen">1</view>
+        <view class="rankRanking {{item.placement==1?'rankRankingGreen':item.placement>4?'rankRankingGrey':'rankRankingBlue'}}">
+          {{item.placement}}
+        </view>
         <!-- 比赛列表 -->
         <view class="rankRecordDetail">
           <!-- 羁绊图标组 -->
           <view class="fettersIconList">
-            <view class="fettersIconBasic tft-hexagon-image tft-hexagon-image--black tft-hexagon-image--24 tft-hexagon-image--gold" wx:for="{{6}}">
-              <image src="//cdn.lolchess.gg/images/assets/tft/traits/4.0/trait_icon_theboss_black.png" />
+            <view class="fettersIconBasic {{cItem.className}}" wx:for="{{item.traits}}" wx:for-index="cIndex" wx:for-item="cItem">
+              <image src="https://{{cItem.imgUrl}}" />
             </view>
           </view>
           <!-- 英雄头像组 -->
           <view class="hexoIconList">
-            <view class="hexoIconBasic tft-champion cost-1" wx:for="{{9}}">
-              <image src="//cdn.lolchess.gg/images/tft/champions/set4.5/Garen.png" alt="Garen" data-toggle="tooltip" title="" data-original-title="Garen" />
+            <view class="hexoIconBasic tft-champion cost-1" wx:for="{{item.units}}" wx:for-index="cIndex" wx:for-item="cItem">
+              <image src="https://{{cItem.imgUrl}}" />
             </view>
           </view>
         </view>
         <!-- 右侧 -->
         <view class="matchTime">
-          <view>排位赛</view>
-          <view>30:34</view>
-          <view>5h ago</view>
+          <view>{{item.gameMode=='Ranked'?'排位':'匹配'}}</view>
+          <view>{{item.length}}</view>
+          <view>{{item.age}}</view>
         </view>
         <view class="searchAllIcon " bindtap="jumptoDetail">
           <view class="cuIcon-unfold"></view>
@@ -91,5 +97,6 @@
 <view class='cu-load load-modal loadingIcon' wx:if="{{loadModal}}">
   <!-- <view class='cuIcon-emojifill text-orange'></view> -->
   <image src='https://cdn.lolchess.gg/images/tft/item/HandofJustice.png' class='png' mode='aspectFit'></image>
+  <!-- <image src='https://madao.live/img/chanzi.png' class='png' mode='aspectFit'></image> -->
   <view class='gray-text'>加载中...</view>
 </view>

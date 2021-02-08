@@ -23,13 +23,21 @@ router.get('/', async (ctx, next) => {
       server
     } = ctx.query;
     // let urlParams = encodeURIComponent('非物質えぐって')
-    const body = await get(`https://lolchess.gg/profile/jp/${encodeURIComponent(name)}`)
+    name = name.replace(/\s+/g, "").toLowerCase()
+    // await get(`https://lolchess.gg/profile/jp/${encodeURIComponent(name)}/sync`)
+    const body = await get(`https://lolchess.gg/profile/${server}/${encodeURIComponent(name)}`)
+
     // const body = await get(`https://lolchess.gg/profile/jp/%E7%81%BC%E7%9C%BC%E7%9A%84%E5%A4%8F%E4%BE%AF%E6%83%87`)
     if (body) {
       let request = ctx.request;
       logger.info(`当前访问ip地址为${await getIp(request)}`);
       ctx.set("Content-Type", "application/json")
-      ctx.body = success(pleyerInfo(body))
+      // 获取拼装好的信息
+      let allPlayerInfo = await pleyerInfo(body, {
+        name,
+        server
+      })
+      ctx.body = success(allPlayerInfo)
     } else {
       ctx.body = error(500, 'res为空')
     }
