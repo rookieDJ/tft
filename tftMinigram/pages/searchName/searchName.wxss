@@ -135,6 +135,7 @@
   width: 80rpx;
   flex-shrink: 0;
   position: relative;
+  transform: rotate(-90deg);
 }
 .searchAllIcon>.cuIcon-unfold{
   right: 30rpx;

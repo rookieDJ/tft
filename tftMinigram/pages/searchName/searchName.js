@@ -101,6 +101,12 @@ Component({
       this.setData({
         loadModal: true
       })
+    },
+    // 跳转到详情
+    jumptoDetail() {
+      wx.navigateTo({
+        url: '../detail/detail'
+      })
     }
   },
 

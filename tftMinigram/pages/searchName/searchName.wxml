@@ -80,7 +80,7 @@
           <view>30:34</view>
           <view>5h ago</view>
         </view>
-        <view class="searchAllIcon ">
+        <view class="searchAllIcon " bindtap="jumptoDetail">
           <view class="cuIcon-unfold"></view>
         </view>
       </view>
